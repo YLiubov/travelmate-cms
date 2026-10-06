@@ -1,13 +1,17 @@
 # TravelMate CMS
 
-Sanity Studio project used to plan and manage content for the TravelMate
-travel app. It is the first step in building a CMS so articles and authors
-can be managed outside of the React application.
+Sanity Studio project used to manage content for the TravelMate travel app.
 
 ## Content models
 
-See [CONTENT-MODELS.md](./CONTENT-MODELS.md) for the full documentation of
-the **Article** and **User** models, including fields and data types.
+The Studio includes **Article**, **User**, **Country**, **City** and
+**Attraction** models. See [CONTENT-MODELS.md](./CONTENT-MODELS.md) for their
+fields and relationships.
+
+The production dataset contains a connected set of French and Danish travel
+content. See [CONTENT-GENERATION.md](./CONTENT-GENERATION.md) for the text
+prompts and editorial review, and [IMAGE-CREDITS.md](./IMAGE-CREDITS.md) for
+photo sources and reuse licenses.
 
 ## Run locally
 

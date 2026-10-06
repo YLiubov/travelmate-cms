@@ -48,7 +48,7 @@ Schema file: `schemaTypes/country.ts`
 | `code` | Country code | `string` | Short country code, e.g. `FR`, `DK`. |
 | `slug` | Slug | `slug` | URL-friendly identifier, generated from the name. |
 | `description` | Description | `text` | A short description of the country. |
-| `image` | Image | `image` | Cover image for the country. |
+| `image` | Image | `image` | Cover photo with alt text, author credit, license and source URL. |
 
 ## City
 
@@ -59,7 +59,7 @@ Schema file: `schemaTypes/city.ts`
 | `name` | Name | `string` | The name of the city. |
 | `slug` | Slug | `slug` | URL-friendly identifier, generated from the name. |
 | `description` | Description | `text` | A short description of the city. |
-| `image` | Image | `image` | Cover image for the city. |
+| `image` | Image | `image` | Cover photo with alt text, author credit, license and source URL. |
 | `country` | Country | `reference` → `country` | Link to the `Country` document the city belongs to. |
 
 ## Attraction
@@ -71,7 +71,7 @@ Schema file: `schemaTypes/attraction.ts`
 | `name` | Name | `string` | The name of the attraction. |
 | `slug` | Slug | `slug` | URL-friendly identifier, generated from the name. |
 | `description` | Description | `text` | A short description of the attraction. |
-| `image` | Image | `image` | Cover image for the attraction. |
+| `image` | Image | `image` | Cover photo with alt text, author credit, license and source URL. |
 | `address` | Address | `string` | The street address of the attraction. |
 | `city` | City | `reference` → `city` | Link to the `City` document the attraction is located in. |
 
@@ -101,15 +101,16 @@ Denmark (country) → Copenhagen (city) → Nyhavn
                                        → Den Gamle By
 ```
 
-## Test data
+## Published TravelMate content
 
-- 1 `User` document and 1 `Article` document (referencing that user as the
-  author) have been created and published.
-- 2 `Country` documents (France, Denmark) have been created and published.
-- 4 `City` documents (Paris, Lyon, Copenhagen, Aarhus), each correctly
-  referencing its country, have been created and published.
-- 8 `Attraction` documents (2 per city), each correctly referencing its
-  city, have been created and published.
+- 2 `Country` documents (France and Denmark) are published.
+- 4 `City` documents (Paris, Lyon, Copenhagen and Aarhus) are published and
+  each references its country.
+- 8 `Attraction` documents (2 per city) are published and each references its
+  city.
+- All 14 travel documents have a corresponding Sanity image asset with
+  alternative text, photographer credit, license and source URL.
 
-This confirms that image upload, slug generation and the reference fields
-(`author`, `country`, `city`) all work correctly end to end.
+The text prompts and editorial/factual review are documented in
+[CONTENT-GENERATION.md](./CONTENT-GENERATION.md). Photographer credits, image
+sources and licenses are listed in [IMAGE-CREDITS.md](./IMAGE-CREDITS.md).

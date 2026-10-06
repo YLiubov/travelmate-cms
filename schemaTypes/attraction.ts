@@ -33,6 +33,29 @@ export const attraction = defineType({
       name: 'image',
       title: 'Image',
       type: 'image',
+      description: 'Travel photo. Keep its credit, license and source with the image.',
+      fields: [
+        defineField({
+          name: 'altText',
+          title: 'Alternative text',
+          type: 'string',
+        }),
+        defineField({
+          name: 'credit',
+          title: 'Photo credit',
+          type: 'string',
+        }),
+        defineField({
+          name: 'license',
+          title: 'Photo license',
+          type: 'string',
+        }),
+        defineField({
+          name: 'sourceUrl',
+          title: 'Original source URL',
+          type: 'url',
+        }),
+      ],
     }),
 
     defineField({
